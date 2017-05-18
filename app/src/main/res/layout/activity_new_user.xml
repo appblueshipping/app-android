@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_blueshipping_tela_rastreio_erro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activity.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/activity_new_user_titleNewUser"
+                android:text="@string/lbl_new_user_title"
+                android:textColor="@color/colorWhite"
+                android:textSize="35sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:layout_gravity="center"/>
+
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/activity_new_user_edtName"
+                    android:hint="@string/hint_new_user_name"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:backgroundTint="@color/colorWhite60percent" />
+
+                <EditText
+                    android:id="@+id/activity_new_user_edtEmail"
+                    android:hint="@string/hint_new_user_email"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"
+                    android:backgroundTint="@color/colorWhite60percent"/>
+
+                <EditText
+                    android:id="@+id/activity_new_user_edtPhone"
+                    android:hint="@string/hint_new_user_phone"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:inputType="phone"
+                    android:backgroundTint="@color/colorWhite60percent"/>
+
+                <EditText
+                    android:id="@+id/activity_new_user_edtUsername"
+                    android:hint="@string/hint_new_user_username"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:backgroundTint="@color/colorWhite60percent"/>
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="70dp">
+
+                    <Button
+                        android:id="@+id/activity_new_user_btnCancelar"
+                        android:text="@string/btn_new_user_cancel"
+                        android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/round_rect_btn_blue"
+                        android:layout_marginRight="5dp"/>
+
+                    <Button
+                        android:id="@+id/activity_new_user_btnRegister"
+                        android:text="@string/btn_new_user_register"
+                        android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/round_rect_btn_blue"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

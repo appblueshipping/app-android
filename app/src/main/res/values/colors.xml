@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorLightBlue">#6AA1C8</color>
+
+    // Splash Activity
+    <color name="colorBlueBackgroundSplash">#004B84</color>
+
+    // Login Activity
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite60percent">#60FFFFFF</color>
+    <color name="colorLightBlue80percent">#806AA1C8</color>
+
+    <color name="colorTransparent">#90FFFFFF</color>
+
+</resources>

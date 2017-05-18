@@ -1,0 +1,86 @@
+<resources>
+
+    <!--// App name-->
+    <string name="app_name">Blue Shipping</string>
+
+    <!--// Custom Dialog-->
+    <string name="custom_dialog_txtOk">OK</string>
+    <string name="custom_dialog_txtDescription">TRACKING NUMBER NOT FOUND</string>
+
+
+    <!--// New User Activity-->
+    <string name="lbl_new_user_title">NEW USER</string>
+    <string name="hint_new_user_name">NAME</string>
+    <string name="hint_new_user_email">E-MAIL</string>
+    <string name="hint_new_user_phone">PHONE</string>
+    <string name="hint_new_user_username">USERNAME</string>
+    <string name="btn_new_user_cancel">CANCEL</string>
+    <string name="btn_new_user_register">REGISTER</string>
+
+    <!--// Settings Activity-->
+    <string name="lbl_settings_title">PROFILE</string>
+    <string name="btn_setting_btnSave">SAVE</string>
+    <string name="btn_setting_btnLogout">LOGOUT</string>
+
+    <!--// Login Activity-->
+    <string name="txt_email">username</string>
+    <string name="txt_password">password</string>
+    <string name="txt_login_title">Login</string>
+    <string name="btn_login_signup">New user? Register now!</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_forgot_pass">Forgot password?</string>
+
+    <string name="hint_email">email</string>
+    <string name="hint_pass">password</string>
+
+    <!--// Main Activity-->
+    <string name="tabAboutUs">ABOUT US</string>
+    <string name="tabTracking">TRACK NOW</string>
+    <string name="tabContactUs">CONTACT US</string>
+    <string name="activity_main_btnLogout">LOGOUT</string>
+
+    <!--// Tracking Result Activity-->
+    <string name="lbl_tracking_result_title">RESULT</string>
+    <string name="lbl_tracking_result_title_status">STATUS</string>
+    <string name="lbl_tracking_result_BLAWB">B/L-AWB:</string>
+    <string name="lbl_tracking_result_type">Type:</string>
+    <string name="lbl_tracking_result_company">Company:</string>
+    <string name="lbl_tracking_result_origin">Origin:</string>
+    <string name="lbl_tracking_result_finalDestination">Final destination:</string>
+    <string name="lbl_tracking_result_exporterOrImporter">Exporter or Importer:</string>
+    <string name="lbl_tracking_result_pickupDate">Pickup Date:</string>
+
+    <string name="lbl_tracking_result_BLAWB_response">blawb</string>
+    <string name="lbl_tracking_result_type_response">type</string>
+    <string name="lbl_tracking_result_company_response">company</string>
+    <string name="lbl_tracking_result_origin_response">origin</string>
+    <string name="lbl_tracking_result_finalDestination_response">finaldestination</string>
+    <string name="lbl_tracking_result_exporterOrImporter_response">exporter</string>
+    <string name="lbl_tracking_result_pickupDate_response">datainicio</string>
+
+
+    <!--// Tracking Fragment-->
+    <string name="txt_tracking_fragment_code">Enter your tracking number bellow</string>
+    <string name="btn_tracking">SEARCH</string>
+    <string name="hint_code">R34900P343535</string>
+
+    <!--// Contact US Fragment-->
+    <string name="lbl_contact_fragment">CONTACT US</string>
+    <string name="lbl_contact_fragment_number">+55 27 3026-0473</string>
+    <string name="lbl_contact_fragment_email">app@blueshipping.com.br</string>
+    <string name="lbl_contact_fragment_site">www.blueshipping.com.br</string>
+    <string name="btn_contact_us_sendEmail">SEND E-MAIL</string>
+
+    <!--// About Us Fragment-->
+    <string name="lbl_about_us_fragment">ABOUT US</string>
+    <string name="lbl_about_us_fragment_text">Le Lorem Ipsum est simplement du faux texte employé
+        dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+        standard de limprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble
+        des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il na pas fait
+        que survivre cinq siècles, mais sest aussi adapté à la bureautique informatique, sans que
+        son contenu nen soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de
+        feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
+        inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</string>
+
+
+</resources>

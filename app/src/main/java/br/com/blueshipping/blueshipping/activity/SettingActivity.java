@@ -1,6 +1,7 @@
 package br.com.blueshipping.blueshipping.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,21 +37,23 @@ public class SettingActivity extends Activity {
         EditText edtUserName = (EditText) findViewById(R.id.activity_setting_edtUsername);
         edtUserName.setTypeface(Utils.customFont("CoreSansD45Medium.otf"));
 
+        btnLogout = (Button) findViewById(R.id.activity_setting_btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplication(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Removes other Activities from stack
+                startActivity(intent);
+            }
+        });
+
         btnBack = (ImageView) findViewById(R.id.activity_setting_btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 finish();
-            }
-        });
-
-        btnLogout = (Button) findViewById(R.id.activity_setting_btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //finish();
             }
         });
 

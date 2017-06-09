@@ -1,12 +1,11 @@
 <resources>
 
     <!--// App name-->
-    <string name="app_name">Blue Shipping</string>
+    <string name="app_name">Blue Shipping do Brasil</string>
 
     <!--// Custom Dialog-->
     <string name="custom_dialog_txtOk">OK</string>
     <string name="custom_dialog_txtDescription">TRACKING NUMBER NOT FOUND</string>
-
 
     <!--// New User Activity-->
     <string name="lbl_new_user_title">NEW USER</string>
@@ -58,6 +57,10 @@
     <string name="lbl_tracking_result_exporterOrImporter_response">exporter</string>
     <string name="lbl_tracking_result_pickupDate_response">datainicio</string>
 
+    <string name="header_tracking_result_name">Date</string>
+    <string name="header_tracking_result_status">Status</string>
+    <string name="header_tracking_result_docs">Docs</string>
+
 
     <!--// Tracking Fragment-->
     <string name="txt_tracking_fragment_code">Enter your tracking number bellow</string>
@@ -66,21 +69,30 @@
 
     <!--// Contact US Fragment-->
     <string name="lbl_contact_fragment">CONTACT US</string>
-    <string name="lbl_contact_fragment_number">+55 27 3026-0473</string>
-    <string name="lbl_contact_fragment_email">app@blueshipping.com.br</string>
+    <string name="lbl_contact_fragment_number">+55 27 2142-0111</string>
+    <string name="lbl_contact_fragment_email">suporte@blueshipping.com.br</string>
     <string name="lbl_contact_fragment_site">www.blueshipping.com.br</string>
     <string name="btn_contact_us_sendEmail">SEND E-MAIL</string>
 
     <!--// About Us Fragment-->
     <string name="lbl_about_us_fragment">ABOUT US</string>
-    <string name="lbl_about_us_fragment_text">Le Lorem Ipsum est simplement du faux texte employé
-        dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte
-        standard de limprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble
-        des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il na pas fait
-        que survivre cinq siècles, mais sest aussi adapté à la bureautique informatique, sans que
-        son contenu nen soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de
-        feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-        inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</string>
+    <string name="lbl_about_us_fragment_text">Carrying goods is transporting values ​​- those that
+        create wealth and those that move the relationships around the world. And at Blue Shipping,
+        the biggest value for us is the trust of our clients, achieved over these 15 years of operation.
+        \n\nThe commitment of our team is to use their experience to ensure safety and security in all
+        phases of the logistics operation. Connecting all the continents, we offer services of
+        national and international ocean and air freight, besides Foreign Trade consulting.
+        \n\nWith a specialized commercial and operational team, with over 20 years of experience in the
+        industry, Blue Shipping connects the world through safe and reliable logistics operations.
+        Our mission is to ensure the delivery and receiving of cargo, with competitive prices and
+        excellence in service.\n\nMore than goods, we deliver tranquility.\n\nIn our freight tracking app,
+        you and your company can easily track the movement of your product at every stage of the
+        process. Come visit Blue Shipping\'s new facilities at Enseada do Suá, in Espírito Santo,
+        or consult one of our 120 representatives all over the world.\n\nAs we complete 15 years in
+        service, Blue Shipping renews its brand, but keeps its tradition of qualified and friendly
+        service and its innovative spirit - in search of new seas to explore and new ways to navigate.
+        \n\nBecause the most important thing is to deliver value to people, anywhere in the world,
+        through a transparent and friendly relationship.</string>
 
 
 </resources>

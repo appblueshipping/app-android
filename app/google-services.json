@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1073111712158",
+    "firebase_url": "https://blueshippingdobrasil.firebaseio.com",
+    "project_id": "blueshippingdobrasil",
+    "storage_bucket": "blueshippingdobrasil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073111712158:android:c98cb1447351fe96",
+        "android_client_info": {
+          "package_name": "br.com.blueshipping.blueshipping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073111712158-r8nlj9bladetjk7l43onl84vc18m6cg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApgdjAnnYQFhdq0leUJDNBTiVUwKkltiE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

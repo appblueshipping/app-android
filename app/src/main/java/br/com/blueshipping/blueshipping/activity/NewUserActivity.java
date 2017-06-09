@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.blueshipping.blueshipping.R;
@@ -14,6 +15,7 @@ public class NewUserActivity extends Activity {
 
     Button btnCancelar;
     Button btnRegister;
+    ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,14 @@ public class NewUserActivity extends Activity {
         edtUserName.setTypeface(Utils.customFont("CoreSansD45Medium.otf"));
 
 
+        btnBack = (ImageView) findViewById(R.id.activity_setting_btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+            }
+        });
 
         btnRegister = (Button) findViewById(R.id.activity_new_user_btnRegister);
         btnRegister.setTypeface(Utils.customFont("CoreSansD55Bold.otf"));

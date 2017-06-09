@@ -17,11 +17,12 @@
             android:id="@+id/item_tracking_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="02/12/2017"
             android:textSize="14sp"
             android:layout_gravity="center_vertical"
             android:padding="14dip"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/colorWhite"/>
 
 
         <View android:layout_width="2dp"
@@ -37,7 +38,8 @@
             android:gravity="center"
             android:padding="14dip"
             android:text="100"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"/>
 
 
         <View android:layout_width="2dp"
@@ -46,10 +48,11 @@
 
         <ImageView
             android:id="@+id/item_tracking_docs"
-            android:src="@drawable/ic_link_white_24dp"
             android:layout_gravity="center_vertical"
             android:padding="10dip"
             />
+
+        <!--android:src="@drawable/ic_link_white_24dp"-->
 
 
         <!--<TextView-->

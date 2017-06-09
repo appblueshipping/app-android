@@ -18,11 +18,10 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
 
-                Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(mainIntent);
                 finish();
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
-        }, 4000);
+        }, 2000);
 
     }
 }

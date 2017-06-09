@@ -13,6 +13,11 @@
     <color name="colorWhite60percent">#60FFFFFF</color>
     <color name="colorLightBlue80percent">#806AA1C8</color>
 
+    <color name="colorBlack">#000000</color>
+
     <color name="colorTransparent">#90FFFFFF</color>
+
+    // About Us
+    <color name="colorGray">#A9A9A9</color>
 
 </resources>

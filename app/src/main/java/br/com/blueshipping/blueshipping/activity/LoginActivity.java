@@ -1,13 +1,9 @@
 package br.com.blueshipping.blueshipping.activity;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.icu.util.Currency;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -65,8 +61,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.activity_login_btnForgotPassword:
 
-                intent = new Intent(getApplicationContext(), WebViewActivity.class);
-                startActivity(intent);
+//                intent = new Intent(getApplicationContext(), VideoViewActivity.class);
+//                startActivity(intent);
                 break;
 
             case R.id.activity_login_btnGoSignup:
@@ -76,29 +72,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
-
-//    private void checksAllFields(){
-//
-//        String email = edtEmail.getText().toString();
-//        String password = edtPass.getText().toString();
-//
-//        if (email.isEmpty() || password.isEmpty()){
-//            Utils.showToast(this, getString(R.string.dlg_invalid_fields));
-//            return;
-//        }
-//
-//        if (!Utils.isValidEmail(email)){
-//            Utils.showToast(this, getString(R.string.dlg_invalid_email_message));
-//            return;
-//        }
-//
-//        Utils.disableButton(btnAuthentication, pbAuthentication);
-//        if (!mAuthenticationService.requestAuthentication(this, email, password)){
-//            Utils.enableButton(btnAuthentication, pbAuthentication);
-//        }
-//    }
-
 
 
 }

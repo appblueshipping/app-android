@@ -65,10 +65,10 @@ public class ContactUsFragment extends Fragment {
     public void sendEmail() {
 
         Intent intent=new Intent(Intent.ACTION_SEND);
-        String[] recipients={"sistemas@teste.com.br"};
+        String[] recipients={"suporte@blueshipping.com.br"};
         intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-        intent.putExtra(Intent.EXTRA_SUBJECT,"FaleConosco[Enviado pelo aplicativo]");
-        intent.putExtra(Intent.EXTRA_TEXT,"Escreva aqui sua mensagem");
+        intent.putExtra(Intent.EXTRA_SUBJECT,"FaleConosco [Enviado pelo aplicativo Blue Shipping]");
+        intent.putExtra(Intent.EXTRA_TEXT,"");
         intent.setType("text/html");
         startActivity(Intent.createChooser(intent, "Enviar e-mail"));
     }

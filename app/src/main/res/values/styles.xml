@@ -14,6 +14,16 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorControlNormal">#c5c5c5</item>
     </style>
+
+    <!--<style name="Theme.App.Base" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--<item name="colorPrimary">@android:color/transparent</item>-->
+        <!--<item name="colorControlNormal">#c5c5c5</item>-->
+        <!--<item name="colorControlActivated">#435678</item>-->
+        <!--<item name="colorControlHighlight">#123344</item>-->
+    <!--</style>-->
 
 </resources>

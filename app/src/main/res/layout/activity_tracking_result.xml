@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/activity_horizontal_margin"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".activity.LoginActivity">
+    tools:context="br.com.blueshipping.blueshipping.activity.TrackingResultActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp">
+        android:padding="10dp">
 
         <include layout="@layout/item_custom_navigation" />
     </FrameLayout>
@@ -26,253 +25,276 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="30dp">
+                android:padding="@dimen/activity_horizontal_margin"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="30dp">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleResult"
+                        android:text="@string/lbl_tracking_result_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="32sp"
+                        android:textColor="@color/colorWhite"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleBL"
+                        android:text="@string/lbl_tracking_result_BLAWB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultBL"
+                        android:text="@string/lbl_tracking_result_BLAWB_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleType"
+                        android:text="@string/lbl_tracking_result_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultType"
+                        android:text="@string/lbl_tracking_result_type_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleCompany"
+                        android:text="@string/lbl_tracking_result_company"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultCompany"
+                        android:text="@string/lbl_tracking_result_company_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleOrigin"
+                        android:text="@string/lbl_tracking_result_origin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultOrigin"
+                        android:text="@string/lbl_tracking_result_origin_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleFinalDestination"
+                        android:text="@string/lbl_tracking_result_finalDestination"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultFinalDestination"
+                        android:text="@string/lbl_tracking_result_finalDestination_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleExOrIm"
+                        android:text="@string/lbl_tracking_result_exporterOrImporter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultExOrIm"
+                        android:text="@string/lbl_tracking_result_exporterOrImporter_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_titleDate"
+                        android:text="@string/lbl_tracking_result_pickupDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorLightBlue"/>
+
+                    <TextView
+                        android:id="@+id/activity_tracking_result_resultDate"
+                        android:text="@string/lbl_tracking_result_pickupDate_response"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp"/>
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/activity_tracking_result_titleResult"
-                    android:text="@string/lbl_tracking_result_title"
+                    android:id="@+id/activity_tracking_result_titleStatus"
+                    android:text="@string/lbl_tracking_result_title_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textSize="32sp"
-                    android:textColor="@color/colorWhite"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleBL"
-                    android:text="@string/lbl_tracking_result_BLAWB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultBL"
-                    android:text="@string/lbl_tracking_result_BLAWB_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleType"
-                    android:text="@string/lbl_tracking_result_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultType"
-                    android:text="@string/lbl_tracking_result_type_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleCompany"
-                    android:text="@string/lbl_tracking_result_company"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultCompany"
-                    android:text="@string/lbl_tracking_result_company_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleOrigin"
-                    android:text="@string/lbl_tracking_result_origin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultOrigin"
-                    android:text="@string/lbl_tracking_result_origin_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleFinalDestination"
-                    android:text="@string/lbl_tracking_result_finalDestination"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultFinalDestination"
-                    android:text="@string/lbl_tracking_result_finalDestination_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleExOrIm"
-                    android:text="@string/lbl_tracking_result_exporterOrImporter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultExOrIm"
-                    android:text="@string/lbl_tracking_result_exporterOrImporter_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_titleDate"
-                    android:text="@string/lbl_tracking_result_pickupDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorLightBlue"/>
-
-                <TextView
-                    android:id="@+id/activity_tracking_result_resultDate"
-                    android:text="@string/lbl_tracking_result_pickupDate_response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginLeft="8dp"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/activity_tracking_result_titleStatus"
-                android:text="@string/lbl_tracking_result_title_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textColor="@color/colorWhite"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:padding="10dp"
                 android:fillViewport="true">
 
                 <LinearLayout
 
                     android:id="@+id/activity_tracking_listView_resultTracking"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:headerDividersEnabled="false"
                     android:orientation="vertical">
 
@@ -281,7 +303,6 @@
             </ScrollView>
 
         </LinearLayout>
-
 
     </ScrollView>
 

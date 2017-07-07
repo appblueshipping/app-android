@@ -2,6 +2,7 @@ package br.com.blueshipping.blueshipping.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -149,6 +150,11 @@ public class TrackingResultActivity extends Activity {
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+//                        String url = trackingStatusGeral.getDocumento();
+//                        Intent i = new Intent(Intent.ACTION_VIEW);
+//                        i.setData(Uri.parse(url));
+//                        startActivity(i);
 
                         Intent intent;
                         intent = new Intent(getApplicationContext(), WebViewActivity.class);

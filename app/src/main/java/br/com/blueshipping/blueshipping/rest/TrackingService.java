@@ -9,8 +9,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
 
 import br.com.blueshipping.blueshipping.model.Tracking;
 import br.com.blueshipping.blueshipping.model.TrackingStatusGeral;
@@ -22,8 +26,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class TrackingService {
 
-
-
     private final String URL_JSON = "https://www.blueshipping.com.br/index.php/wp-json/wp/v2/";
     private final String service = "rastreamento?search="; //RW12344
 
@@ -34,11 +36,13 @@ public class TrackingService {
         this.listener = listener;
     }
 
-    public void requestJsonResponse(String code) {
+    public void requestJsonResponse(String code) throws NoSuchAlgorithmException {
 
         AsyncHttpClient client = new AsyncHttpClient();
 
-        client.get (URL_JSON + service + code, new AsyncHttpResponseHandler() {
+        String urlService = URL_JSON + service + code;
+
+        client.get (urlService, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 

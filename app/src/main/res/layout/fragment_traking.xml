@@ -65,6 +65,8 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:textSize="16sp"
+                    android:hint="TRACK NUMBER"
+                    android:textColorHint="@color/colorGray"
                     android:inputType="textCapCharacters|textAutoComplete"
                     android:backgroundTint="@color/colorWhite60percent" />
 

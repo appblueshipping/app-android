@@ -4,6 +4,7 @@ package br.com.blueshipping.blueshipping.fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -15,7 +16,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.io.Serializable;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 import br.com.blueshipping.blueshipping.R;
@@ -30,13 +39,16 @@ import br.com.blueshipping.blueshipping.utils.Utils;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TrakingFragment extends Fragment implements TrackingService.TrackingServiceListener {
+public class TrakingFragment extends Fragment {
 
     private TrackingService mTrackingService;
     private ProgressDialog mProgressDialog;
 
     Button searchButton;
     String mCode;
+    boolean failedRequest;
+    boolean serverError;
+    String responseFailed;
 
     public TrakingFragment() {
         // Required empty public constructor
@@ -53,6 +65,9 @@ public class TrakingFragment extends Fragment implements TrackingService.Trackin
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        failedRequest = false;
+        serverError = false;
 
         // Change Fonts
         TextView txtEnterCode = (TextView) getView().findViewById(R.id.fragment_tracking_txtEnterCode);
@@ -81,15 +96,22 @@ public class TrakingFragment extends Fragment implements TrackingService.Trackin
                     mProgressDialog = Utils.getProgressDialog(getActivity());
                     mProgressDialog.show();
 
-                    // Service
-                    mTrackingService = new TrackingService(TrakingFragment.this);
-                    mTrackingService.requestJsonResponse(mCode);
+                    new LongOperation().execute("");
+
+//                    // Service
+//                    mTrackingService = new TrackingService(TrakingFragment.this);
+//                    mTrackingService.requestJsonResponse(mCode);
+//                    mMyTrackingService = new MyTrackingService(getContext());
+//                    if (!mMyTrackingService.requestMyTrackingService(TrakingFragment.this, mCode)){
+//                        mProgressDialog.dismiss();
+//                        //Utils.showDialogWithoutCancel(this, getString(R.string.dlg_network_error_title),getString(R.string.dlg_network_error_message),null);
+//                    }
 
                 }
                 else {
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(), "DIGITE O CÓDIGO DE RASTREIO");
+                    alert.showDialog(getActivity(), "TYPE THE TRACKING NUMBER");
                 }
 
             }
@@ -98,26 +120,163 @@ public class TrakingFragment extends Fragment implements TrackingService.Trackin
 
     }
 
-    @Override
-    public void onTrackingServiceSuccessfully(Tracking trackingService, TrackingStatusGeral trackingStatusGeral) {
+    private class LongOperation extends AsyncTask<String, Void, String> {
 
-        mProgressDialog.dismiss();
+        @Override
+        protected String doInBackground(String... params) {
 
-        Utils.saveCodeSharedPreferences(getActivity(), mCode);
+            String url = "https://www.blueshipping.com.br/index.php/wp-json/wp/v2/rastreamento?search=";
+            String urlRequest = url + mCode;
 
-        Intent intent = new Intent(getActivity(), TrackingResultActivity.class);
-        intent.putExtra(Constants.PUT_TRACKING, trackingService);
-        intent.putExtra(Constants.PUT_TRACKING_STATUS_GERAL, trackingStatusGeral);
-        startActivity(intent);
+            try{
+                getJSONObjectFromURL(urlRequest);
+
+                // Parse your json here
+
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+
+                serverError = true;
+                responseFailed = "SERVER ERROR, TRY LATER";
+
+            }
+
+            return "Executed";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            // might want to change "executed" for the returned string passed
+            // into onPostExecute() but that is upto you
+            if (failedRequest){
+
+                mProgressDialog.dismiss();
+
+                ViewDialog alert = new ViewDialog();
+                alert.showDialog(getActivity(), responseFailed);
+            }
+            if (serverError){
+
+                mProgressDialog.dismiss();
+
+                ViewDialog alert = new ViewDialog();
+                alert.showDialog(getActivity(), responseFailed);
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {}
     }
 
-    @Override
-    public void onTrackingServiceFailed(String responseFailed) {
+    public void getJSONObjectFromURL(String urlString) throws IOException, JSONException {
 
-        mProgressDialog.dismiss();
+        HttpURLConnection urlConnection = null;
 
-        ViewDialog alert = new ViewDialog();
-        alert.showDialog(getActivity(), responseFailed);
+        URL url = new URL(urlString);
 
+        urlConnection = (HttpURLConnection) url.openConnection();
+
+        urlConnection.setRequestMethod("GET");
+        urlConnection.setReadTimeout(10000 /* milliseconds */);
+        urlConnection.setConnectTimeout(15000 /* milliseconds */);
+
+        urlConnection.setDoOutput(true);
+
+        urlConnection.connect();
+
+        BufferedReader br=new BufferedReader(new InputStreamReader(url.openStream()));
+
+        char[] buffer = new char[1024];
+
+        String jsonString = new String();
+
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = br.readLine()) != null) {
+            sb.append(line+"\n");
+        }
+        br.close();
+
+        jsonString = sb.toString();
+
+        System.out.println("JSON: " + jsonString);
+
+//        if (jsonString != null){
+//
+//
+//        }
+
+        JSONArray jsonArray = new JSONArray(jsonString);
+
+        ArrayList<TrackingStatusGeral> statusGeralList = new ArrayList<>();
+
+        if (jsonArray.length() != 0) {
+
+            failedRequest = false;
+            serverError = false;
+
+            JSONObject acf = ((JSONObject) jsonArray.get(0)).getJSONObject("acf");
+
+            JSONArray jsonStatus = acf.getJSONArray("statusgeral");
+
+            for (int j = 0; j < jsonStatus.length(); j++) {
+
+                JSONObject jsonStatu = ((JSONObject) jsonStatus.get(j));
+                TrackingStatusGeral statusGeral = new TrackingStatusGeral(jsonStatu);
+                statusGeralList.add(statusGeral);
+
+            }
+            TrackingStatusGeral mTrackStatusGeral = new TrackingStatusGeral(statusGeralList);
+            Tracking mTrackACF = new Tracking(acf);
+
+//            System.out.println(mTrackACF.getBlawb());
+//            System.out.println(mTrackStatusGeral.getStatus());
+            mProgressDialog.dismiss();
+
+            Utils.saveCodeSharedPreferences(getActivity(), mCode);
+
+            Intent intent = new Intent(getActivity(), TrackingResultActivity.class);
+            intent.putExtra(Constants.PUT_TRACKING, mTrackACF);
+            intent.putExtra(Constants.PUT_TRACKING_STATUS_GERAL, mTrackStatusGeral);
+            startActivity(intent);
+
+        }
+        else {
+
+            failedRequest = true;
+            responseFailed = "TRACKING NUMBER NOT FOUND";
+        }
+
+//        return new JSONObject(jsonString);
+//        return acf;
     }
+
+//    @Override
+//    public void onTrackingServiceSuccessfully(Tracking trackingService, TrackingStatusGeral trackingStatusGeral) {
+//
+//        mProgressDialog.dismiss();
+//
+//        Utils.saveCodeSharedPreferences(getActivity(), mCode);
+//
+//        Intent intent = new Intent(getActivity(), TrackingResultActivity.class);
+//        intent.putExtra(Constants.PUT_TRACKING, trackingService);
+//        intent.putExtra(Constants.PUT_TRACKING_STATUS_GERAL, trackingStatusGeral);
+//        startActivity(intent);
+//    }
+//
+//    @Override
+//    public void onTrackingServiceFailed(String responseFailed) {
+//
+//        mProgressDialog.dismiss();
+//
+//        ViewDialog alert = new ViewDialog();
+//        alert.showDialog(getActivity(), responseFailed);
+//
+//    }
+
 }

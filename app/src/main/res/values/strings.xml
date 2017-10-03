@@ -42,14 +42,14 @@
     <string name="activity_main_btnLogout">LOGOUT</string>
 
     <!--// Tracking Result Activity-->
-    <string name="lbl_tracking_result_title">RESULT</string>
-    <string name="lbl_tracking_result_title_status">STATUS</string>
+    <string name="lbl_tracking_result_title">TRACKING</string>
+    <string name="lbl_tracking_result_title_status">FOLLOW UP</string>
     <string name="lbl_tracking_result_BLAWB">B/L-AWB:</string>
-    <string name="lbl_tracking_result_type">Type:</string>
+    <string name="lbl_tracking_result_type">Vessel/Airline:</string>
     <string name="lbl_tracking_result_company">Company:</string>
     <string name="lbl_tracking_result_origin">Origin:</string>
     <string name="lbl_tracking_result_finalDestination">Final destination:</string>
-    <string name="lbl_tracking_result_exporterOrImporter">Exporter or Importer:</string>
+    <string name="lbl_tracking_result_exporterOrImporter">Consignee:</string>
     <string name="lbl_tracking_result_pickupDate">Pickup Date:</string>
 
     <string name="lbl_tracking_result_BLAWB_response">blawb</string>
